@@ -57,12 +57,10 @@ class OnboardingContainerViewController: UIViewController {
 extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        print(viewController.view.backgroundColor)
         return getPreviousViewController(from: viewController)
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        print(viewController.view.backgroundColor)
         return getNextViewController(from: viewController)
     }
 
