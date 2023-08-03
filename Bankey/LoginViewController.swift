@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
     
     let titleLabel = UILabel()
@@ -14,6 +22,8 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     let buttonSignIn = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var username: String? {
         return loginView.usernameTextField.text
@@ -29,6 +39,11 @@ class LoginViewController: UIViewController {
         
         style()
         layout()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        buttonSignIn.configuration?.showsActivityIndicator = false
     }
 }
 
@@ -112,22 +127,26 @@ extension LoginViewController {
     }
     
     private func login() {
-        guard let username = username, let password = password else {
-            assertionFailure("Username / password cannot be nil")
-            return
-        }
-        
-        if username.isEmpty || password.isEmpty {
-            setError(withMessage: "Username / password cannot be blank")
-            return
-        }
-        
-        if username == "Gabriel" || password == "123456" {
-            buttonSignIn.configuration?.showsActivityIndicator = true
-            return
-        }
-        
-        setError(withMessage: "Incorrect username / password")
+//        guard let username = username, let password = password else {
+//            assertionFailure("Username / password cannot be nil")
+//            return
+//        }
+//
+//        if username.isEmpty || password.isEmpty {
+//            setError(withMessage: "Username / password cannot be blank")
+//            return
+//        }
+//
+//        if username == "Gabriel" || password == "123456" {
+//            buttonSignIn.configuration?.showsActivityIndicator = true
+//            delegate?.didLogin()
+//            return
+//        }
+//
+//        setError(withMessage: "Incorrect username / password")
+//        return
+        buttonSignIn.configuration?.showsActivityIndicator = true
+        delegate?.didLogin()
         return
     }
     
