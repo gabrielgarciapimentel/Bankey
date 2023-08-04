@@ -12,6 +12,8 @@
 		C94A5A8B2A675770004820D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A5A8A2A675770004820D0 /* LoginView.swift */; };
 		C94BFEBB2A70AC6A00377099 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BFEBA2A70AC6A00377099 /* OnboardingViewController.swift */; };
 		C98C5C6A2A704AD7006B03FC /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C5C692A704AD7006B03FC /* OnboardingContainerViewController.swift */; };
+		C98D5AEA2A7D5A9F0033C15F /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D5AE92A7D5A9F0033C15F /* UIViewController+Utils.swift */; };
+		C98D5AEC2A7D65030033C15F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D5AEB2A7D65030033C15F /* MainViewController.swift */; };
 		C9D390512A67166500A5A2C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D390502A67166500A5A2C2 /* AppDelegate.swift */; };
 		C9D390552A67166500A5A2C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D390542A67166500A5A2C2 /* LoginViewController.swift */; };
 		C9D3905A2A67166700A5A2C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D390592A67166700A5A2C2 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		C94A5A8A2A675770004820D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C94BFEBA2A70AC6A00377099 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C98C5C692A704AD7006B03FC /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		C98D5AE92A7D5A9F0033C15F /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		C98D5AEB2A7D65030033C15F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C9D3904D2A67166500A5A2C2 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D390502A67166500A5A2C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9D390542A67166500A5A2C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				C92D12E62A7C4B7A00339F92 /* LocalState.swift */,
+				C98D5AE92A7D5A9F0033C15F /* UIViewController+Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -89,11 +94,12 @@
 		C9D3904F2A67166500A5A2C2 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				C92D12E52A7C4B5600339F92 /* Utils */,
-				C98C5C682A70498A006B03FC /* Onboarding */,
-				C94A5A892A675742004820D0 /* Login */,
-				C9D390642A6724FD00A5A2C2 /* Files */,
 				C9D390502A67166500A5A2C2 /* AppDelegate.swift */,
+				C9D390642A6724FD00A5A2C2 /* Files */,
+				C94A5A892A675742004820D0 /* Login */,
+				C98C5C682A70498A006B03FC /* Onboarding */,
+				C92D12E52A7C4B5600339F92 /* Utils */,
+				C98D5AEB2A7D65030033C15F /* MainViewController.swift */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -178,11 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98D5AEA2A7D5A9F0033C15F /* UIViewController+Utils.swift in Sources */,
 				C94A5A8B2A675770004820D0 /* LoginView.swift in Sources */,
 				C92D12E72A7C4B7A00339F92 /* LocalState.swift in Sources */,
 				C92D12E42A7BFC8000339F92 /* DummyViewController.swift in Sources */,
 				C9D390552A67166500A5A2C2 /* LoginViewController.swift in Sources */,
 				C94BFEBB2A70AC6A00377099 /* OnboardingViewController.swift in Sources */,
+				C98D5AEC2A7D65030033C15F /* MainViewController.swift in Sources */,
 				C9D390512A67166500A5A2C2 /* AppDelegate.swift in Sources */,
 				C98C5C6A2A704AD7006B03FC /* OnboardingContainerViewController.swift in Sources */,
 			);
