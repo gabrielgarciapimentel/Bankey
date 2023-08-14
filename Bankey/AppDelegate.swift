@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardingViewController.delegate = self
         dummyViewController.delegate = self
         
-        window?.rootViewController = mainViewController
+        window?.rootViewController = AccountSummaryViewController()
         
         mainViewController.selectedIndex = 1
         return true
