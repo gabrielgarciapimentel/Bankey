@@ -21,11 +21,24 @@ class AccountSummaryViewController: UIViewController {
         
         setup()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        guard let headerView = tableView.tableHeaderView else {return}
+        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        if headerView.frame.size.height != size.height {
+            headerView.frame.size.height = size.height
+            tableView.tableHeaderView = headerView
+            tableView.layoutIfNeeded()
+        }
+    }
 }
 
 
 extension AccountSummaryViewController {
     func setup() {
+        view.backgroundColor = .systemCyan
         setupTableView()
     }
     
@@ -35,6 +48,10 @@ extension AccountSummaryViewController {
         
         // Manage the table view data
         tableView.dataSource = self
+        
+        // Including header view
+        tableView.tableHeaderView = AccountSummaryHeaderView()
+        
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -56,7 +73,7 @@ extension AccountSummaryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        games.count
     }
 }
 
