@@ -25,6 +25,7 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
+        // setting a header height
         guard let headerView = tableView.tableHeaderView else {return}
         let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         if headerView.frame.size.height != size.height {
@@ -49,6 +50,10 @@ extension AccountSummaryViewController {
         // Manage the table view data
         tableView.dataSource = self
         
+        tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
+        tableView.rowHeight = AccountSummaryCell.rowHeight
+        tableView.tableFooterView = UIView()
+        
         // Including header view
         tableView.tableHeaderView = AccountSummaryHeaderView()
         
@@ -67,8 +72,8 @@ extension AccountSummaryViewController {
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID, for: indexPath) as! AccountSummaryCell
+        cell.typeLabel.text = games[indexPath.row]
         return cell
     }
     
