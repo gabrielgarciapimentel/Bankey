@@ -31,7 +31,7 @@ class AccountSummaryHeaderView: UIView {
 
 extension AccountSummaryHeaderView {
     func style() {
-        backgroundColor = .systemCyan
+        backgroundColor = .systemBlue
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Bankey"
