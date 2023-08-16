@@ -35,7 +35,7 @@ extension AccountSummaryHeaderView {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Bankey"
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .title1).bold()
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
         
         greetingsLabel.translatesAutoresizingMaskIntoConstraints = false
         greetingsLabel.text = "Good morning,"
