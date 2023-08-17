@@ -179,27 +179,27 @@ extension LoginViewController {
     }
     
     private func login() {
-        guard let username = username, let password = password else {
-            assertionFailure("Username / password cannot be nil")
-            return
-        }
-
-        if username.isEmpty || password.isEmpty {
-            setError(withMessage: "Username / password cannot be blank")
-            return
-        }
-
-        if username == "Gabriel" || password == "123456" {
-            buttonSignIn.configuration?.showsActivityIndicator = true
-            delegate?.didLogin()
-            return
-        }
-
-        setError(withMessage: "Incorrect username / password")
-        return
-//        buttonSignIn.configuration?.showsActivityIndicator = true
-//        delegate?.didLogin()
+//        guard let username = username, let password = password else {
+//            assertionFailure("Username / password cannot be nil")
+//            return
+//        }
+//
+//        if username.isEmpty || password.isEmpty {
+//            setError(withMessage: "Username / password cannot be blank")
+//            return
+//        }
+//
+//        if username == "Gabriel" || password == "123456" {
+//            buttonSignIn.configuration?.showsActivityIndicator = true
+//            delegate?.didLogin()
+//            return
+//        }
+//
+//        setError(withMessage: "Incorrect username / password")
 //        return
+        buttonSignIn.configuration?.showsActivityIndicator = true
+        delegate?.didLogin()
+        return
     }
     
     private func setError(withMessage message: String) {

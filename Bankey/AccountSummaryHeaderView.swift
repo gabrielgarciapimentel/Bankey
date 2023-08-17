@@ -14,6 +14,7 @@ class AccountSummaryHeaderView: UIView {
     let nameLabel = UILabel()
     let dateLabel = UILabel()
     let imageView = UIImageView()
+    let shakeBellView = ShakeBellView()
     
     let contentLabelStack = UIStackView()
     
@@ -59,6 +60,8 @@ extension AccountSummaryHeaderView {
         contentLabelStack.translatesAutoresizingMaskIntoConstraints = false
         contentLabelStack.axis = .vertical
         contentLabelStack.spacing = 8
+        
+        shakeBellView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func layout() {
@@ -69,6 +72,7 @@ extension AccountSummaryHeaderView {
         
         addSubview(contentLabelStack)
         addSubview(imageView)
+        addSubview(shakeBellView)
         
         NSLayoutConstraint.activate([
             contentLabelStack.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
@@ -81,6 +85,11 @@ extension AccountSummaryHeaderView {
             trailingAnchor.constraint(equalToSystemSpacingAfter: imageView.trailingAnchor, multiplier: 2),
             imageView.heightAnchor.constraint(equalToConstant: 100),
             imageView.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        NSLayoutConstraint.activate([
+            shakeBellView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            shakeBellView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
