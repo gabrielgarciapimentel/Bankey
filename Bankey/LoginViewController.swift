@@ -179,31 +179,44 @@ extension LoginViewController {
     }
     
     private func login() {
-//        guard let username = username, let password = password else {
-//            assertionFailure("Username / password cannot be nil")
-//            return
-//        }
-//
-//        if username.isEmpty || password.isEmpty {
-//            setError(withMessage: "Username / password cannot be blank")
-//            return
-//        }
-//
-//        if username == "Gabriel" || password == "123456" {
-//            buttonSignIn.configuration?.showsActivityIndicator = true
-//            delegate?.didLogin()
-//            return
-//        }
-//
-//        setError(withMessage: "Incorrect username / password")
-//        return
-        buttonSignIn.configuration?.showsActivityIndicator = true
-        delegate?.didLogin()
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password cannot be nil")
+            return
+        }
+
+        if username.isEmpty || password.isEmpty {
+            setError(withMessage: "Username / password cannot be blank")
+            return
+        }
+
+        if username == "Gabriel" || password == "123456" {
+            buttonSignIn.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
+            return
+        }
+
+        setError(withMessage: "Incorrect username / password")
         return
+//        buttonSignIn.configuration?.showsActivityIndicator = true
+//        delegate?.didLogin()
+//        return
     }
     
     private func setError(withMessage message: String) {
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+        shakeButton()
+    }
+    
+    //animation with Core Animations (CA)
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        
+        animation.isAdditive = true
+        buttonSignIn.layer.add(animation, forKey: "shake")
     }
 }
