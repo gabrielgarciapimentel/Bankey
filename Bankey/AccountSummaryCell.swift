@@ -62,9 +62,11 @@ extension AccountSummaryCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
         nameLabel.text = "Account name"
+        nameLabel.adjustsFontSizeToFitWidth = true
         
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.text = "Some balance"
+        balanceLabel.adjustsFontSizeToFitWidth = true
         balanceLabel.textAlignment = .right
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         
@@ -72,6 +74,7 @@ extension AccountSummaryCell {
         // balanceAmountLabel.text = "$4,000.00"
         balanceAmountLabel.textAlignment = .right
         balanceAmountLabel.text = "$XXX,XXX.XX"
+        balanceAmountLabel.adjustsFontSizeToFitWidth = true
         
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
         let image = UIImage(systemName: "chevron.right")!.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)

@@ -19,10 +19,17 @@ class AccountSummaryViewController: UIViewController {
     var profile: Profile?
     var accounts: [AccountSummaryCell.ViewModel] = []
     
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+        barButtonItem.tintColor = .label
+        return barButtonItem
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+        setupNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -36,6 +43,10 @@ class AccountSummaryViewController: UIViewController {
             tableView.tableHeaderView = headerView
             tableView.layoutIfNeeded()
         }
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
@@ -118,5 +129,13 @@ extension AccountSummaryViewController {
     
     private func fetchProfile() {
         profile = Profile(firstName: "Kevin", lastName: "Smith")
+    }
+}
+
+
+// MARK: Actions
+extension AccountSummaryViewController {
+    @objc func logoutTapped() {
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
