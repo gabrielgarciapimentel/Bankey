@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C92A372A2A90070400957A1A /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A37292A90070400957A1A /* Date+Utils.swift */; };
+		C92A372C2A9008D500957A1A /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A372B2A9008D500957A1A /* AccountSummaryViewController+Networking.swift */; };
+		C92A372E2A90165200957A1A /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A372D2A90165200957A1A /* ProfileTests.swift */; };
+		C92A37302A90168400957A1A /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92A372F2A90168400957A1A /* AccountTests.swift */; };
 		C92C1A772A8E7638001B2DE6 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C1A762A8E7638001B2DE6 /* CurrencyFormatterTests.swift */; };
 		C92D12E42A7BFC8000339F92 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D12E32A7BFC8000339F92 /* DummyViewController.swift */; };
 		C92D12E72A7C4B7A00339F92 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D12E62A7C4B7A00339F92 /* LocalState.swift */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C92A37292A90070400957A1A /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		C92A372B2A9008D500957A1A /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
+		C92A372D2A90165200957A1A /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		C92A372F2A90168400957A1A /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		C92C1A6D2A8E750E001B2DE6 /* BankeyUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92C1A762A8E7638001B2DE6 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		C92D12E32A7BFC8000339F92 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				C92C1A762A8E7638001B2DE6 /* CurrencyFormatterTests.swift */,
+				C92A372D2A90165200957A1A /* ProfileTests.swift */,
+				C92A372F2A90168400957A1A /* AccountTests.swift */,
 			);
 			path = BankeyUnitTests;
 			sourceTree = "<group>";
@@ -100,6 +110,7 @@
 				C98D882D2A8D5C9500C8A1B1 /* Decimal+Utils.swift */,
 				C98D882F2A8D5D8D00C8A1B1 /* CurrencyFormatter.swift */,
 				C9350DCC2A8E947800DCDC42 /* NSNotificationName.swift */,
+				C92A37292A90070400957A1A /* Date+Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -128,6 +139,7 @@
 				C98D882A2A8D2B8500C8A1B1 /* Cells */,
 				C98D88292A8D2B6E00C8A1B1 /* Header */,
 				C96B9AE72A8A63F1000C4BC2 /* AccountSummaryViewController.swift */,
+				C92A372B2A9008D500957A1A /* AccountSummaryViewController+Networking.swift */,
 			);
 			name = AccountSummary;
 			sourceTree = "<group>";
@@ -302,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92C1A772A8E7638001B2DE6 /* CurrencyFormatterTests.swift in Sources */,
+				C92A37302A90168400957A1A /* AccountTests.swift in Sources */,
+				C92A372E2A90165200957A1A /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98D5AEA2A7D5A9F0033C15F /* UIViewController+Utils.swift in Sources */,
+				C92A372A2A90070400957A1A /* Date+Utils.swift in Sources */,
 				C98D882C2A8D2C6500C8A1B1 /* AccountSummaryCell.swift in Sources */,
 				C94A5A8B2A675770004820D0 /* LoginView.swift in Sources */,
 				C92D12E72A7C4B7A00339F92 /* LocalState.swift in Sources */,
@@ -326,6 +341,7 @@
 				C96B9AE82A8A63F1000C4BC2 /* AccountSummaryViewController.swift in Sources */,
 				C9D390512A67166500A5A2C2 /* AppDelegate.swift in Sources */,
 				C98C5C6A2A704AD7006B03FC /* OnboardingContainerViewController.swift in Sources */,
+				C92A372C2A9008D500957A1A /* AccountSummaryViewController+Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

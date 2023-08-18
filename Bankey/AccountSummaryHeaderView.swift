@@ -16,6 +16,16 @@ class AccountSummaryHeaderView: UIView {
     let imageView = UIImageView()
     let shakeBellView = ShakeBellView()
     
+    struct ViewModel {
+        let welcomeMessage: String
+        let name: String
+        let date: Date
+        
+        var dateFormatted: String {
+            return date.monthDayYearString
+        }
+    }
+    
     let contentLabelStack = UIStackView()
     
     override init(frame: CGRect) {
@@ -91,5 +101,13 @@ extension AccountSummaryHeaderView {
             shakeBellView.trailingAnchor.constraint(equalTo: trailingAnchor),
             shakeBellView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+}
+
+extension AccountSummaryHeaderView {
+    func configure(viewModel: ViewModel) {
+        titleLabel.text = viewModel.welcomeMessage
+        nameLabel.text = viewModel.name
+        dateLabel.text = viewModel.dateFormatted
     }
 }
