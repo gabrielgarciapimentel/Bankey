@@ -39,7 +39,6 @@ class AccountSummaryViewController: UIViewController {
         let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         if headerView.frame.size.height != size.height {
             headerView.frame.size.height = size.height
-            tableView.tableHeaderView = headerView
             tableView.layoutIfNeeded()
         }
     }
@@ -71,6 +70,12 @@ extension AccountSummaryViewController {
         
         // Including header view
         tableView.tableHeaderView = headerView
+        
+        // Including refresh control to tableView
+        tableView.refreshControl =  UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:
+                                              #selector(handleRefreshControl),
+                                              for: .valueChanged)
         
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -111,6 +116,11 @@ extension AccountSummaryViewController {
     @objc func logoutTapped() {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
+    
+    @objc func handleRefreshControl() {
+        fetchData()
+    }
+
 }
 
 // MARK: - Networking
@@ -118,9 +128,10 @@ extension AccountSummaryViewController {
     private func fetchData() {
         
         let group = DispatchGroup()
+        let randomUser = String(Int.random(in: 1..<4))
         
         group.enter()
-        fetchProfile(forUserId: "1") { result in
+        fetchProfile(forUserId: randomUser) { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
@@ -132,7 +143,7 @@ extension AccountSummaryViewController {
         }
         
         group.enter()
-        fetchAccounts(forUserId: "1") { result in
+        fetchAccounts(forUserId: randomUser) { result in
             switch result {
             case .success(let accounts):
                 self.accounts = accounts
@@ -145,6 +156,7 @@ extension AccountSummaryViewController {
         
         group.notify(queue: .main) {
             self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
     
